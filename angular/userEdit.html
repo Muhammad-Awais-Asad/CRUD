@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<div ng-include="'nav-bar.html'"></div>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="bootstrap.min.css" >
+	<title>Edit User</title>
+</head>
+<body>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+						<br>
+					<h3>Edit User Info:</h3>
+						<br>
+						<br>
+				<form name="myForm" >
+					  
+					  	<div class="col">
+					    	User ID:
+					      <input type="text" class="form-control" placeholder="User Number" ng-model="user.id" disabled>
+					    </div>
+					    <br>
+
+					    <div class="col">
+					    	  User First Name:
+					    	  <input type="text" name="fname" class="form-control" placeholder="User First Name" ng-model="user.firstName" required>
+					      	  <span style="color:red" ng-show="myForm.fname.$error.required">Required!!</span>
+					    </div>
+					    <br>
+
+					    <div class="col">
+					    	User Last Name:
+					      <input type="text" name="lname" class="form-control" placeholder="User Last Name" ng-model="user.lastName" required>
+					      <span style="color:red" ng-show="myForm.lname.$error.required">Required!!</span>
+					    </div>
+					    <br>
+
+					    <div class="col">
+					    	User Phone Number:
+					      <input type="text" name="num" class="form-control" placeholder="User phone number" ng-model="user.number" required>
+					      <span style="color:red" ng-show="myForm.num.$error.required">Required!!</span>
+					    </div>
+					    <br>
+
+					    <div class="col">
+					    	User Email:
+					      <input type="text" name="email" class="form-control" placeholder="User email" ng-model="user.email" required>
+					      <span style="color:red" ng-show="myForm.email.$error.required">Required!!</span>
+						   <span style="color:red" ng-show="myForm.email.$error.email">Enter Correct Email.</span>
+					    </div>
+					    <br>
+							
+						<div class="col">
+					    	User Password:
+					      <input type="text" name="add" class="form-control" placeholder="User address" ng-model="user.password" required>
+					      <span style="color:red" ng-show="myForm.add.$error.required">Required!!</span>
+					    </div>
+						<br>
+
+					    <div class="col">
+					    	User Address:
+					      <input type="text" name="add" class="form-control" placeholder="User address" ng-model="user.address" required>
+					      <span style="color:red" ng-show="myForm.add.$error.required">Required!!</span>
+					    </div>
+				</form>
+<br>
+<hr>
+		<button type="submit" ng-disabled="myForm.$invalid" class="btn btn-info" ng-click="update()">Update</button>
+
+	<script type="text/javascript" src="angular\angular.min.js"></script>
+	<script type="text/javascript" src="angular\angular-route.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	
+
+	<script src="jquery-3.3.1.slim.min.js" ></script>
+	<script src="bootstrap.min.js" ></script>
+</body>
+</html>

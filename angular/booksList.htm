@@ -1,0 +1,84 @@
+<div ng-include="'nav-bar.html'"></div>
+<div class="container">
+	<div ng-show="alert==true" class="alert alert-danger" role="alert">
+	   <button type="button" class="close" data-dismiss="alert">
+	  		<span aria-hidden="true">
+	  			&times;
+	 		</span>
+
+	 		<span class="sr-only">
+	 		 	Close
+	 		</span>
+	 	</button>
+	  <strong>Alert..!</strong> Data deleted successfully.
+	</div>
+	<ul class="navigation" style="padding-top: 20px">
+		<li><a href="#!books-add">Add new Book</a></li>
+	</ul>
+
+	<h1>Book List</h1>
+
+	<div class="row">
+		<div class="col">
+				<br>
+			<h3>Search Through Key Words:</h3>
+			<input type="text" ng-model="search" placeholder="Search...." >
+				<br>
+				<br>
+			<table class="table">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Number:</th>
+			      <th scope="col">Title:</th>
+			      <th scope="col">Dscription:</th>
+			      <th scope="col">Author:</th>
+			      <th scope="col">Price(PKR):</th>
+			    </tr>
+			  </thead>
+				<tbody>
+				    <tr ng-repeat="data in booksList | filter: search">
+				      
+				      <td>{{data.id}}</td>
+				      <td>{{data.number}}</td>
+				      <td>{{data.title}}</td>
+				      <td>{{data.description}}</td>
+				      <td>{{data.author}}</td>
+				      <td>{{data.price}}</td>
+				      <td>
+				      	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{$index}}" data-toggle="tooltip" data-placement="top" title="Remove this book" >
+							  Remove
+						</button>
+					      	<div class="modal fade" id="exampleModal{{$index}}" tabindex="-1"  
+					      	     role="dialog"    aria-labelledby="exampleModalLabel" aria-hidden="true">
+							  <div class="modal-dialog" role="document">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <h5 class="modal-title">Alert...!!!</h5>
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							          <span aria-hidden="true">&times;</span>
+							        </button>
+							      </div>
+							      <div class="modal-body">
+							        <p>This action can not be undone. Are you sure you want to delete it..? </p>
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							        <button type="button" class="btn btn-danger" ng-click="remove(data.id)" data-dismiss="modal">Remove</button>
+
+							      </div>
+							    </div>
+							  </div>
+							</div>
+				       </td>
+				      <td><button class="btn btn-info" ng-click="edit(data.id)" data-toggle="tooltip" data-placement="top" title="Edit info of this book" >Edit</button></td>
+
+				      <td><button class="btn btn-primary" ng-click="view(data.id)" data-toggle="tooltip" data-placement="top" title="View info of this book" >View</button></td>
+
+				    </tr>
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<div ng-include="'nav-bar.html'"></div>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="bootstrap.min.css" >
+	<title>Add New Book</title>
+</head>
+<body >
+
+		<div class="container">
+			<div class="row">
+				<div class="col">
+						<br>
+						<h3>Add New Book:</h3>
+						<br>
+						<br>
+						<form>
+						    <div class="col">
+						      <input type="text" class="form-control" placeholder="Book Number" ng-model="book.number">
+						    </div>
+						    <br>
+
+						    <div class="col">
+						      <input type="text" class="form-control" placeholder="Title" ng-model="book.title">
+						    </div>
+						    <br>
+
+						    <div class="col">
+						      <input type="text" class="form-control" placeholder="Description" ng-model="book.description">
+						    </div>
+						    <br>
+
+						    <div class="col">
+						      <input type="text" class="form-control" placeholder="Author" ng-model="book.author">
+						    </div>
+						    <br>
+
+						    <div class="col">
+						      <input type="text" class="form-control" placeholder="Book Price" ng-model="book.price">
+						    </div>
+						</form>
+						<br>
+						<hr>
+						<button type="submit" class="btn btn-info" ng-click="submit()">Submit</button>
+				</div>
+			</div>
+		</div>
+
+	<script type="text/javascript" src="angular\angular.min.js"></script>
+	<script type="text/javascript" src="angular\angular-route.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	
+
+	<script src="jquery-3.3.1.slim.min.js" ></script>
+	<script src="bootstrap.min.js" ></script>
+</body>
+</html>
